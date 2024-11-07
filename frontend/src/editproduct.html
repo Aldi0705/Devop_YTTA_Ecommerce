@@ -23,7 +23,7 @@
       </li>
     </ul>
     <h1 class="text-center">Edit Product</h1>
-    <form class="mt-4" name="product-form" id="product-form">
+    <form class="mt-4" name="productForm" id="productForm">
       <input type="text" class="form-control" placeholder="id" name="id" id="idproduct" hidden>
       <div class="mb-3">
         <label for="name" class="form-label">Product name</label>
@@ -51,8 +51,8 @@
     const id = localStorage.getItem('CURRENT_ID_PRODUCT');
     const product = localStorage.getItem('CURRENT_PRODUCT').split('%%%');
     const registerUrl = 'http://localhost:8000/product';
-    const productForm = document.querySelector('#product-form');
-    const form = document.forms['product-form'];
+    const productForm = document.querySelector('#productForm');
+    const form = document.forms['productForm'];
     const idproduct = document.querySelector('#idproduct');
     const nameproduct = document.querySelector('#name');
     const description = document.querySelector('#description');
