@@ -23,7 +23,7 @@
       </li>
     </ul>
     <h1 class="text-center">Add Product</h1>
-    <form class="mt-4" name="productForm" id="productForm">
+    <form class="mt-4" name="product-form" id="product-form">
       <div class="mb-3">
         <label for="name" class="form-label">Product name</label>
         <input type="text" class="form-control" placeholder="product name" name="name" id="name" required>
@@ -49,9 +49,9 @@
   <script>
     const token = localStorage.getItem('TOKEN');
     const registerUrl = 'http://localhost:8000/product';
-    const productForm = document.querySelector('#productForm');
-    const form = document.forms['productForm'];
-    productForm.addEventListener('submit', (ev) => {
+    const product-form = document.querySelector('#product-form');
+    const form = document.forms['product-form'];
+    product-form.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const picture = document.querySelector('#picture').value;
       const name = document.querySelector('#name').value;
