@@ -49,9 +49,9 @@
   <script>
     const token = localStorage.getItem('TOKEN');
     const registerUrl = 'http://localhost:8000/product';
-    const product-form = document.querySelector('#product-form');
+    const productForm = document.querySelector('#product-form');
     const form = document.forms['product-form'];
-    product-form.addEventListener('submit', (ev) => {
+    productForm.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const picture = document.querySelector('#picture').value;
       const name = document.querySelector('#name').value;
