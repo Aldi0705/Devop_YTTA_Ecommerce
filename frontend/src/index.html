@@ -12,7 +12,7 @@
 <body>
   <main class="container mt-4">
     <h1 class="text-center">Login</h1>
-    <form class="mt-4" name="loginForm" id="loginForm">
+    <form class="mt-4" name="login-form" id="login-form">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input type="email" class="form-control" placeholder="email" name="email" id="email" required>
@@ -31,9 +31,9 @@
   <script>
     const loginUrl = 'http://localhost:8000/auth/login';
     const forgetpasswordurl = 'http://localhost:8000/auth/password/forget';
-    const loginForm = document.querySelector('#loginForm');
+    const login-form = document.querySelector('#login-form');
     const forgetpasswordbtn = document.querySelector('#forgetpasswordbtn');
-    loginForm.addEventListener('submit', (ev) => {
+    login-form.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const email = document.querySelector('#email').value;
       const password = document.querySelector('#password').value;
