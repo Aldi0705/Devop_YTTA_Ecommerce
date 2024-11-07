@@ -51,7 +51,7 @@
     const id = localStorage.getItem('CURRENT_ID_PRODUCT');
     const product = localStorage.getItem('CURRENT_PRODUCT').split('%%%');
     const registerUrl = 'http://localhost:8000/product';
-    const product-form = document.querySelector('#product-form');
+    const productForm = document.querySelector('#product-form');
     const form = document.forms['product-form'];
     const idproduct = document.querySelector('#idproduct');
     const nameproduct = document.querySelector('#name');
@@ -61,7 +61,7 @@
     nameproduct.value = product[0];
     description.value = product[1];
     price.value = parseInt(product[2]);
-    product-form.addEventListener('submit', (ev) => {
+    productForm.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const picture = document.querySelector('#picture').value;
       const name = document.querySelector('#name').value;
