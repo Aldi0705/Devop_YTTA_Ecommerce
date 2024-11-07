@@ -12,7 +12,7 @@
 <body>
   <main class="container mt-4">
     <h1 class="text-center">Register</h1>
-    <form class="mt-4" name="registerform" id="register-form">
+    <form class="mt-4" name="register-form" id="register-form">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input type="email" class="form-control" placeholder="email address" name="email" id="email" required>
@@ -36,8 +36,8 @@
 
   <script>
     const registerUrl = 'http://localhost:8000/auth/register';
-    const register-form = document.querySelector('#register-form');
-    register-form.addEventListener('submit', (ev) => {
+    const registerForm = document.querySelector('#register-form');
+    registerForm.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const email = document.querySelector('#email').value;
       const name = document.querySelector('#name').value;
