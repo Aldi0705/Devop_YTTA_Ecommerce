@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 02:46 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Waktu pembuatan: 05 Nov 2024 pada 12.26
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_carts`
+-- Struktur dari tabel `tbl_carts`
 --
 
 CREATE TABLE `tbl_carts` (
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_carts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tbl_carts`
+-- Dumping data untuk tabel `tbl_carts`
 --
 
 INSERT INTO `tbl_carts` (`id`, `id_product`, `id_user`, `qty`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `tbl_carts` (`id`, `id_product`, `id_user`, `qty`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_comments`
+-- Struktur dari tabel `tbl_comments`
 --
 
 CREATE TABLE `tbl_comments` (
@@ -56,7 +56,7 @@ CREATE TABLE `tbl_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tbl_comments`
+-- Dumping data untuk tabel `tbl_comments`
 --
 
 INSERT INTO `tbl_comments` (`id`, `id_product`, `id_user`, `comment_text`, `datetime`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `tbl_comments` (`id`, `id_product`, `id_user`, `comment_text`, `date
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_products`
+-- Struktur dari tabel `tbl_products`
 --
 
 CREATE TABLE `tbl_products` (
@@ -79,7 +79,7 @@ CREATE TABLE `tbl_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tbl_products`
+-- Dumping data untuk tabel `tbl_products`
 --
 
 INSERT INTO `tbl_products` (`id`, `id_user`, `name`, `description`, `price`, `picture`, `datetime`) VALUES
@@ -90,7 +90,7 @@ INSERT INTO `tbl_products` (`id`, `id_user`, `name`, `description`, `price`, `pi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_users`
+-- Struktur dari tabel `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -103,19 +103,20 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data untuk tabel `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `name`, `username`, `password`, `email`, `avatar`) VALUES
 (5, 'verianto', 'veri', 'sha1$af73a73b$1$7c361c6c7887809edf6a377f3bd18f1b4e21172e', 'user@gmail.com', NULL),
-(6, 'test', 'test', 'sha1$36b051a8$1$5783bb0c1553c912c566e358a24e9f4ce9e1b664', 'test@gmail.com', NULL);
+(6, 'test', 'test', 'sha1$36b051a8$1$5783bb0c1553c912c566e358a24e9f4ce9e1b664', 'test@gmail.com', NULL),
+(7, 'Admin', 'Admin', 'sha1$e44c8952$1$15fc7ebbb04ed95c33d16248f4a761210e633794', 'admin@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_carts`
+-- Indeks untuk tabel `tbl_carts`
 --
 ALTER TABLE `tbl_carts`
   ADD PRIMARY KEY (`id`),
@@ -123,7 +124,7 @@ ALTER TABLE `tbl_carts`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `tbl_comments`
+-- Indeks untuk tabel `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
   ADD PRIMARY KEY (`id`),
@@ -131,67 +132,67 @@ ALTER TABLE `tbl_comments`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `tbl_products`
+-- Indeks untuk tabel `tbl_products`
 --
 ALTER TABLE `tbl_products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `tbl_users`
+-- Indeks untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_carts`
+-- AUTO_INCREMENT untuk tabel `tbl_carts`
 --
 ALTER TABLE `tbl_carts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_comments`
+-- AUTO_INCREMENT untuk tabel `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tbl_products`
+-- AUTO_INCREMENT untuk tabel `tbl_products`
 --
 ALTER TABLE `tbl_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_users`
+-- AUTO_INCREMENT untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tbl_carts`
+-- Ketidakleluasaan untuk tabel `tbl_carts`
 --
 ALTER TABLE `tbl_carts`
   ADD CONSTRAINT `tbl_carts_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `tbl_products` (`id`),
   ADD CONSTRAINT `tbl_carts_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tbl_users` (`id`);
 
 --
--- Constraints for table `tbl_comments`
+-- Ketidakleluasaan untuk tabel `tbl_comments`
 --
 ALTER TABLE `tbl_comments`
   ADD CONSTRAINT `tbl_comments_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `tbl_products` (`id`),
   ADD CONSTRAINT `tbl_comments_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tbl_users` (`id`);
 
 --
--- Constraints for table `tbl_products`
+-- Ketidakleluasaan untuk tabel `tbl_products`
 --
 ALTER TABLE `tbl_products`
   ADD CONSTRAINT `tbl_products_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tbl_users` (`id`);
