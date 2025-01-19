@@ -9,4 +9,3 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use('/', routes);
 app.listen(CONFIG.PORT, () => console.log(`Server is running on port ${CONFIG.PORT}`));
-//
