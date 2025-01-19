@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: ecommerce
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    networks:
+      - backend_network
+
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ecommerce
+    ports:
+      - "3306:3306"
+    networks:
+      - backend_network
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backend/ecommerce.sql:/docker-entrypoint-initdb.d/ecommerce.sql
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
+
+volumes:
+  db_data:
+
+networks:
+  backend_network:
+    driver: bridge
