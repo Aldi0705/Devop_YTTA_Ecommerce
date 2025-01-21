@@ -31,9 +31,9 @@
   <script>
     const loginUrl = 'http://localhost:8000/auth/login';
     const forgetpasswordurl = 'http://localhost:8000/auth/password/forget';
-    const login-form = document.querySelector('#login-form');
+    const loginForm = document.querySelector('#login-form');
     const forgetpasswordbtn = document.querySelector('#forgetpasswordbtn');
-    login-form.addEventListener('submit', (ev) => {
+    loginForm.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const email = document.querySelector('#email').value;
       const password = document.querySelector('#password').value;

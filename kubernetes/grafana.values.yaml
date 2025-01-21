@@ -1,0 +1,15 @@
+service:
+  type: NodePort
+  nodePort: 32001
+
+adminPassword: admin123  # You can change this password
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    
+name: Prometheus
+    type: prometheus
+    url: http://prometheus-server/
+    isDefault: true

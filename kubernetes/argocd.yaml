@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ecommerce-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Aldi0705/Devop_YTTA_Ecommerce.git
+    targetRevision: Filbert
+    path: kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  # Add the namespace here
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
